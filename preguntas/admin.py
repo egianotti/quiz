@@ -28,7 +28,9 @@ class RespuestaAdmin(admin.ModelAdmin):
         #return {}
       pass
 
-class TemaAdmin(admin.ModelAdmin):
-    pass
+
+
 admin.site.register(Pregunta, PreguntaAdmin)
 admin.site.register(Respuesta, RespuestaAdmin)
+admin.site.register(Tema)
+

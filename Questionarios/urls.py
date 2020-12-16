@@ -19,5 +19,7 @@ from preguntas.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('prueba',PruebaView.as_view(),name="prueba")
+    path('prueba', PruebaView.as_view(),name="prueba"),
+    path('temas', TemasView.as_view(),name="temas"),
+    path('genres', show_genres),
 ]

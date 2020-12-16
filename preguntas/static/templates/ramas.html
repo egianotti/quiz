@@ -1,0 +1,10 @@
+{% for tema in temas %}
+    <li>
+        {{ tema.titulo }}
+        {% if tema.hijos|length %}
+            <ul>
+                {% include "ramas.html" with temas=tema.hijos %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

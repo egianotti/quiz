@@ -1,14 +1,18 @@
 from django.db import models
 from django.core.files.storage import FileSystemStorage
 from Questionarios import settings
+from mptt.models import MPTTModel, TreeForeignKey
 
-# Create your models here.
-class Temas(models.Model):
-    titulo= models.CharField(max_length=250, null=True, blank=True)
-    idpadre=models.IntegerField(null=True,blank=True)# 0,1,2,3,4,etc.
+class Tema(MPTTModel):
+    name = models.CharField(max_length=50, unique=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='hijos')
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
 
     def __str__(self):
-        return self.titulo
+        return self.name
+
 
 class Pregunta(models.Model):
     pregunta = models.TextField(max_length=500)
@@ -19,7 +23,7 @@ class Pregunta(models.Model):
 
 
 class TemasPreguntas(models.Model):
-    idtema = models.ForeignKey(Temas,on_delete=models.SET_NULL,null=True, blank=True)
+    idtema = models.ForeignKey(Tema,on_delete=models.SET_NULL,null=True, blank=True)
     idpregunta = models.ForeignKey(Pregunta,on_delete=models.SET_NULL,null=True, blank=True)
 
     # def __str__(self):
