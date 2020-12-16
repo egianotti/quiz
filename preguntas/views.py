@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.views import View
 from django.shortcuts import render
-from .models import Tema, Genre
+from .models import Tema
 
 
 # Create your views here.

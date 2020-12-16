@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import *
 from .views import json
+from mptt.admin import MPTTModelAdmin
+from .models import Tema
 
 # Register your models here.
 def casting(extra,request,queryset):
@@ -29,8 +31,7 @@ class RespuestaAdmin(admin.ModelAdmin):
       pass
 
 
-
 admin.site.register(Pregunta, PreguntaAdmin)
 admin.site.register(Respuesta, RespuestaAdmin)
-admin.site.register(Tema)
+admin.site.register(Tema, MPTTModelAdmin)
 
