@@ -1,0 +1,1 @@
+{"pregunta": "Est\u00e1s construyendo un clasificador binario para reconocimiento de pepinos (y=1) vs. Sand\u00edas (y=0). Cual de las siguientes funciones de activaci\u00f3n recomendar\u00edas para la capa de salida?", "respuestas": [["ReLU", ["0"]], ["LeakyRELU", ["0"]], ["Sigmoid", ["1"]], ["Tanh", ["0"]]]}

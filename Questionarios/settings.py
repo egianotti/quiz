@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Questionarios.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'preguntas/static')],
+        'DIRS': [os.path.join(BASE_DIR, 'preguntas/static'),os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,4 +120,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"preguntas/static")
+STORAGE_PATH= os.path.join(os.path.dirname(BASE_DIR),"quiz/preguntas/static")

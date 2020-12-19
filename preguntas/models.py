@@ -11,8 +11,9 @@ class Temas(models.Model):
         return self.titulo
 
 class Pregunta(models.Model):
+
     pregunta = models.TextField(max_length=500)
-    archivo = models.FileField(upload_to='./preguntas_respuestas/', storage=FileSystemStorage(settings.STATIC_ROOT),null=True,blank=True)
+    archivo = models.FileField(storage=FileSystemStorage(settings.STATIC_ROOT),null=True,blank=True)#,upload_to='./preguntas_respuestas/',)
 
     def __str__(self):
         return self.pregunta

@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from django.views import View
 from django.shortcuts import render
+from .helpers import *
+import json
 
 # Create your views here.
 
@@ -27,4 +29,5 @@ class PruebaView(View):
     def post (self,request,*args,**kwargs):
         p = request
         context = {"p": "Chau"}
+        formatear_json(request)
         return render(p, self.template_name, context)

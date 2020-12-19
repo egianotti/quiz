@@ -1,0 +1,1 @@
+{"pregunta": "La activaci\u00f3n tanh en general funciona major que la activaci\u00f3n sigmoidea para las unidades ocultas porque la media correspondiente a su salida (output) es cercana a cero, por lo que puede centrar mejor los datos para la siguiente capa (layer).", "respuestas": [["verdadero", ["1"]], ["falto", ["0"]]]}

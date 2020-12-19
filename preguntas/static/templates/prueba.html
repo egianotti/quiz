@@ -3,16 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+  <style type="text/css">
+  	#pregunta{
+  	margin:0px 0px 10px 0px;;
+  	}
+  	#pregunta2{
+  	margin:0px 0px 10px 0px;;
+  	}
+  </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
     <body>
         <div>
-            {{ p  }}
+            <h1>  Generacion de questionarios  </h1>
         </div>
-        <form action= "{% url 'prueba' %}" method="post">
-            {% csrf_token %}
-            <label for="salida" >
-            <input type="text" name="salida">
-        <button type="submit" value="envio" > envio de datos</button>
+        <div id="main">
+    <input type="button" id="btAdd" value="Añadir Elemento" class="bt" />
+    <input type="button" id="btRemove" value="Eliminar Elemento" class="bt" />
+    <input type="button" id="btRemoveAll" value="Eliminar Todo" class="bt" /><br />
+    </div>
+        <div>
+        <form action= "{% url 'prueba' %}" method="post" id="formulario1">
+            <!-- {% csrf_token %} -->
+            <div id="separador">
+            <p><br>Pregunta:</br></p>
+            <input type = "text" name = "pregunta", width = "1500" id="pregunta"><br>
+            <input type = "text" name = "respuesta">
+            <label>Correcta</label>
+            <input type="radio"  name="correcta1" value = 1>
+            <label>Falsa</label>
+            <input type="radio"  name="correcta1" value = 0>
+            <br>
+            <input type = "text" name = "respuesta" id="respuesta">
+            <label>Correcta</label>
+            <input type="radio"  name="correcta2" value = 1>
+            <label>Falsa</label>
+            <input type="radio"  name="correcta2" value = 0>
+            <br>
+            <input type = "text" name = "respuesta">
+            <label>Correcta</label>
+            <input type="radio"  name="correcta3" value = 1>
+            <label>Falsa</label>
+            <input type="radio"  name="correcta3" value = 0>
+            <br>
+            <input type = "text" name = "respuesta">
+            <label>Correcta</label>
+            <input type="radio"  name="correcta4" value = 1>
+            <label>Falsa</label>
+            <input type="radio"  name="correcta4" value = 0>
+            <br>
+            </div>
+            <button type = "submit"  > envio de datos</button>
         </form>
+
+        </div>
+
     </body>
+    <script>
+        $( document ).ready(function() {
+        console.log( "ready!" );
+        var container = $("#respuesta");
+
+        $('#btAdd').click(function() {
+
+            $(container).append('<input type=radio class="input" value="" />');
+            });
+        });
+    </script>
 </html>
